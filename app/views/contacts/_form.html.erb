@@ -1,0 +1,27 @@
+<%= form_with model: contact do |form| %>
+  <div>
+    <%= form.label :first %><br>
+    <%= form.text_field :first %>
+    <% article.errors.full_messages_for(:first).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :notes %><br>
+    <%= form.text_area :notes %><br>
+    <% article.errors.full_messages_for(:notes).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<div>
+  <%= form.label :status %><br>
+  <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+</div>
+
+<% end %>
