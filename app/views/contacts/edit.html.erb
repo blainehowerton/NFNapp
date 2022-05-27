@@ -1,6 +1,16 @@
-<h1>Edit Contact</h1>
+<h1>Contacts</h1>
 
-<%= render "form", contact: @contact %>
+We currently have <%= Contact.public_count %> contacts and counting!
+
+<ul>
+  <% @contacts.each do |contact| %>
+    <% unless contact.archived? %>
+      <li>
+        <%= link_to contact.first, contact %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
 
 <%= link_to "Home", home_index_path %>  |  
-<%= link_to "Articles", articles_path %> 
+<%= link_to "New Contact", new_contact_path %> 
