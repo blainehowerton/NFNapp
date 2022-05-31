@@ -3,7 +3,8 @@
 <ul>
   <% @contacts.each do |contact| %>
     <li>
-     <%= link_to contact.first, contact %>
+	<%= contact.first %> <%= contact.last %>
+     <%= link_to 'show', contact %>
     </li>
   <% end %>
 </ul>

@@ -2,15 +2,23 @@
   <div>
     <%= form.label :first %><br>
     <%= form.text_field :first %>
+
+    <p></p>
+
+    <%= form.label :last %><br>
+    <%= form.text_field :last %>
+
     <% contact.errors.full_messages_for(:first).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
+<p></p>
 
   <div>
     <%= form.submit %>
   </div>
 
+<p></p>
 
 <% end %>
