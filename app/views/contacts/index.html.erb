@@ -3,9 +3,11 @@
 <ul>
   <% @contacts.each do |contact| %>
     <li>
-      <a href="/contacts/<%= contact.id %>">
-        <%= contact.first %>
-      </a>
+     <%= link_to contact.first, contact %>
     </li>
   <% end %>
 </ul>
+
+<h3><%= link_to "New Contact", new_contact_path %></h3>
+
+<p><%= link_to "Home", home_index_path %> | <%= link_to "Articles", articles_path %></p>

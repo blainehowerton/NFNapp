@@ -1,3 +1,16 @@
-<h1><%= @contact.name %></h1>
+<h1><%= @contact.first %></h1>
 
-<p><%= @contact.name %></p>
+<p><%= @contact.first %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_contact_path(@contact) %></li>
+  <li><%= link_to "Destroy", contact_path(@contact), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %></li>
+</ul>
+
+
+
+<%= link_to "Home", home_index_path %>  |  
+<%= link_to "Contacts", contacts_path %>
