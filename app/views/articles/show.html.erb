@@ -1,5 +1,18 @@
 <h1>Headline: <%= @article.title %></h1>
+<p>This article is set to publish in print on: <%= @article.print_date %><br>
+  This article is set to publish on the web on: <%= @article.web_date %></p>
 
+<hr>
+
+<h2>Comments</h2>
+<%= render @article.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>
+
+<hr>
+
+<h1>Headline: <%= @article.title %></h1>
 <p>Article: <%= @article.body %></p>
 
 <ul>
@@ -10,11 +23,6 @@
                   } %></li>
 </ul>
 
-<h2>Comments</h2>
-<%= render @article.comments %>
-
-<h2>Add a comment:</h2>
-<%= render 'comments/form' %>
-
+<hr>
 <%= link_to "Home", home_index_path %>  |  
 <%= link_to "Articles", articles_path %> 
