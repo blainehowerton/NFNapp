@@ -1,0 +1,17 @@
+<%= form_with model: edition do |form| %>
+
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+    <% edition.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+<br>
+
+  <div>
+    <%= form.submit %>
+  </div>
+
+<% end %>

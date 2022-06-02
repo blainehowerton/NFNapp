@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_02_151246) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_02_174934) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -45,6 +45,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_02_151246) do
     t.string "primary_phone"
     t.string "secondary_phone"
     t.string "email"
+  end
+
+  create_table "editions", force: :cascade do |t|
+    t.string "title"
+    t.integer "number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "comments", "articles"

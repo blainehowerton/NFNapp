@@ -1,0 +1,13 @@
+<h1>Edition Details</h1>
+<p><%= @edition.title %></p>
+
+<%= link_to "Edit", edit_edition_path(@edition) %>  |  
+<%= link_to "Destroy", edition_path(@edition), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+
+<hr>
+
+<%= link_to "Home", home_index_path %>  |  
+<%= link_to "Editions", editions_path %> 
