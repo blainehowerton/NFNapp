@@ -1,27 +1,34 @@
-<h1>Headline: <%= @article.title %></h1>
-<p>This article is set to publish in print on: <%= @article.print_date %><br>
-  This article is set to publish on the web on: <%= @article.web_date %></p>
+<h1>Article Details</h1>
+<p><%= @article.title %></p>
+<p>Wordpress URL: <a href="<%= @article.wordpress_url %>" target="_blank"><%= @article.wordpress_url %></a><br>
+  This article is set to publish in print on: <%= @article.print_date %><br>
+  This article is set to publish on the web on: <%= @article.web_date %><br>
+  Article status: <%= @article.status %>
+  </p>
 
+<%= link_to "Edit", edit_article_path(@article) %>  |  
+<%= link_to "Destroy", article_path(@article), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+
+<!-- this is an optional view for showing the full article
+<hr>
+
+<p>This is how the article will look:</p>
+<h1><%= @article.title %></h1>
+<p><%= @article.body %></p>
+
+<hr>
+-->
 <hr>
 
 <h2>Comments</h2>
 <%= render @article.comments %>
 
+
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
-
-<hr>
-
-<h1>Headline: <%= @article.title %></h1>
-<p>Article: <%= @article.body %></p>
-
-<ul>
-  <li><%= link_to "Edit", edit_article_path(@article) %></li>
-  <li><%= link_to "Destroy", article_path(@article), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
 
 <hr>
 <%= link_to "Home", home_index_path %>  |  

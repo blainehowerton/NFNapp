@@ -1,4 +1,15 @@
 <%= form_with model: article do |form| %>
+
+  <div>
+    Wordpress URL:<br>
+    <%= form.text_field :wordpress_url %>
+    <% article.errors.full_messages_for(:wordpress_url).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <br>
+
   <div>
     <%= form.label :title %><br>
     <%= form.text_field :title %>
@@ -7,8 +18,7 @@
     <% end %>
   </div>
 
-  <br>
-
+<!-- This is an optional view to add the body of an article
   <div>
     <%= form.label :body %><br>
     <%= form.text_area :body %><br>
@@ -16,6 +26,7 @@
       <div><%= message %></div>
     <% end %>
   </div>
+-->
 
 <br>
 
@@ -41,7 +52,7 @@
 
 <div>
   <%= form.label :status %><br>
-  <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
+  <%= form.select :status, ['public', 'private', 'archived'], selected: 'private' %>
 </div>
 
 <br>

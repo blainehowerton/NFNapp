@@ -47,6 +47,6 @@ class ArticlesController < ApplicationController
 
   private
     def article_params
-      params.require(:article).permit(:title, :body, :status, :print_date, :web_date)
+      params.require(:article).permit(:title, :body, :status, :print_date, :web_date, :wordpress_url)
     end
 end
