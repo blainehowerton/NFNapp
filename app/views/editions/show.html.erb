@@ -1,5 +1,7 @@
 <h1>Edition Details</h1>
-<p><%= @edition.title %></p>
+<p><%= @edition.title %><br>
+    Issue Date: <%= @edition.issue_date %><br>
+    </p>
 
 <%= link_to "Edit", edit_edition_path(@edition) %>  |  
 <%= link_to "Destroy", edition_path(@edition), data: {

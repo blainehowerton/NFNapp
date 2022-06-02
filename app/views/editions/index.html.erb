@@ -3,7 +3,8 @@
 <ul>
   <% @editions.each do |edition| %>
       <li>
-        <%= link_to edition.title, edition %>
+        <%= edition.title %>, 
+        <%= link_to edition.issue_date, edition %>
       </li>
     <% end %>
 </ul>
