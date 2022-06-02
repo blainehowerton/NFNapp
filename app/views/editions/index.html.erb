@@ -2,9 +2,9 @@
 
 <ul>
   <% @editions.each do |edition| %>
-      <li>
-        <%= edition.title %>, 
-        <%= link_to edition.issue_date, edition %>
+      <li> 
+        <%= link_to edition.issue_date, edition %>, 
+        <%= edition.title %>
       </li>
     <% end %>
 </ul>
