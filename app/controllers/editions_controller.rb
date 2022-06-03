@@ -44,6 +44,6 @@ class EditionsController < ApplicationController
 
   private
     def edition_params
-      params.require(:edition).permit(:title, :issue_date)
+      params.require(:edition).permit(:title, :issue_date, :url)
     end
 end

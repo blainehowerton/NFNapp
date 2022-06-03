@@ -1,6 +1,7 @@
 <h1>Edition Details</h1>
 <p><%= @edition.title %><br>
     Issue Date: <%= @edition.issue_date %><br>
+    Digital Edition: <a href="<%= @edition.url %>" target="_blank"><%= @edition.url %></a><br>
     </p>
 
 <%= link_to "Edit", edit_edition_path(@edition) %>  |  

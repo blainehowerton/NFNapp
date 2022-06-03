@@ -29,14 +29,13 @@
 -->
 
 <br>
-
+  <div>
     <%= form.label :print_date %><br>
-    <%= form.date_field :print_date %><br>
-    <% article.errors.full_messages_for(:body).each do |message| %>
+    <%= form.text_field :print_date %><br>
+    <% article.errors.full_messages_for(:print_date).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
-
 
   
 
