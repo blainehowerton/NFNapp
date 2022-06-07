@@ -1,22 +1,32 @@
 <%= form_with model: article do |form| %>
 
   <div>
-    Wordpress URL:<br>
+Issue Date:
+<%= select_tag 'print_date', options_from_collection_for_select(@editions, "issue_date", "issue_date", selected: @article.print_date) %>
+  </div>
+
+<br>
+
+  <div>
+    <%= form.label :title %>: 
+    <%= form.text_field :title %>
+    <% article.errors.full_messages_for(:title).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+<br>
+
+
+  <div>
+    Wordpress URL:
     <%= form.text_field :wordpress_url %>
     <% article.errors.full_messages_for(:wordpress_url).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <br>
 
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-    <% article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
 
 <!-- This is an optional view to add the body of an article
   <div>
@@ -28,21 +38,12 @@
   </div>
 -->
 
-<br>
-  <div>
-    <%= form.label :print_date %><br>
-    <%= form.text_field :print_date %><br>
-    <% article.errors.full_messages_for(:print_date).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
   
 
   <br>
 
     <div>
-    <%= form.label :web_date %><br>
+    <%= form.label :web_date %>: 
     <%= form.date_field :web_date %><br>
     <% article.errors.full_messages_for(:body).each do |message| %>
       <div><%= message %></div>
@@ -51,9 +52,11 @@
 
   <br>
 
+
+
 <div>
-  <%= form.label :status %><br>
-  <%= form.select :status, ['public', 'private', 'archived'], selected: 'private' %>
+  <%= form.label :status %>
+  <%= form.select :status, ['public', 'private', 'archived'], selected: @article.status %>
 </div>
 
 <br>

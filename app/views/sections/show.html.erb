@@ -1,0 +1,17 @@
+<h1>Section Details</h1>
+
+<p><%= @section.title %><br>
+    <%= @section.description %>
+    </p>
+
+<%= link_to "Edit", edit_section_path(@section) %>  |  
+<%= link_to "Destroy", section_path(@section), data: {
+                    turbo_method: :delete,
+                    turbo_confirm: "Are you sure?"
+                  } %>
+
+<hr>
+
+
+<%= link_to "Home", home_index_path %>  |  
+<%= link_to "Sections", sections_path %> 

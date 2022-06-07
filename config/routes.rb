@@ -4,11 +4,16 @@ Rails.application.routes.draw do
   get 'contacts/index'
   get 'articles/index'
   get 'editions/index'
+  get 'sections/index'
 
   resources :contacts
   resources :editions
+  resources :sections
   resources :articles do
-  resources :comments
+    resources :comments
+
+
 end
+
   
 end
