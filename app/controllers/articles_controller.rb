@@ -28,18 +28,16 @@ class ArticlesController < ApplicationController
     end
   end
 
-
-
   def edit
     @article = Article.find(params[:id])
     @editions = Edition.all
+    @sections = Section.all
   end
-
- 
 
   def update
     @article = Article.find(params[:id])
     @article.print_date = params[:print_date]
+    @article.section_id = params[:section_id]
 
     if @article.update(article_params)
       redirect_to @article
