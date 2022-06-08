@@ -1,20 +1,17 @@
 <h2>Article Details</h2>
 
-<p>Section: <%= @article.section_id %>
 <p><%= @article.title %></p>
    Issue Date: <%= @article.print_date %><br>
+   <p>Section: <%= @article.section_id %>
 <p>Wordpress URL: <a href="<%= @article.wordpress_url %>" target="_blank"><%= @article.wordpress_url %></a><br>
   
   This article is set to publish on the web on: <%= @article.web_date %><br>
   Article status: <%= @article.status %><br>
   </p>
 
-<p>
-<%= link_to "Edit", edit_article_path(@article) %>  |  
-<%= link_to "Destroy", article_path(@article), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
+<p>  
+<%= link_to "Edit Article", edit_article_path %> <br>
+<%= button_to "Destroy", article_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>
 </p>
 
 <!-- this is an optional view for showing the full article

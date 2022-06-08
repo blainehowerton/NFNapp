@@ -2,28 +2,15 @@
 
 <p></p>
 
-Address:<br>
-<%= @contact.address_1 %><br>
-<%= @contact.address_2 %><br>
-<%= @contact.city %>, <%= @contact.state %>  <%= @contact.zip %><br>
-<br>
-Phones:<br>
-<%= @contact.primary_phone %><br>
-<%= @contact.secondary_phone %><br>
-<br>
+<address>
+  <strong><%= @contact.address_1 %></strong><br>
+          <%= @contact.address_2 %><br>
+          <%= @contact.city %>, <%= @contact.state %>  <%= @contact.zip %><br>
+<abbr title="Phone">P: </abbr><%= @contact.primary_phone %><br>
+                              <%= @contact.secondary_phone %><br>
+</address>
 Email: <br>
 <%= @contact.email %>
-
-
-<ul>
-  <li><%= link_to "Edit", edit_contact_path(@contact) %></li>
-  <li><%= link_to "Destroy", contact_path(@contact), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %></li>
-</ul>
-
-
-
-<%= link_to "Home", home_index_path %>  |  
-<%= link_to "Contacts", contacts_path %>
+<br>
+<%= link_to "Edit", edit_contact_path(@contact) %> <br><br><br>
+<%= button_to "Destroy", contact_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>

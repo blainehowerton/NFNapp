@@ -1,17 +1,7 @@
-<h1>Section Details</h1>
+<h2>Section Details</h2>
 
 <p><%= @section.title %><br>
     <%= @section.description %>
     </p>
-
+<%= button_to "Destroy", section_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %><br><br>
 <%= link_to "Edit", edit_section_path(@section) %>  |  
-<%= link_to "Destroy", section_path(@section), data: {
-                    turbo_method: :delete,
-                    turbo_confirm: "Are you sure?"
-                  } %>
-
-<hr>
-
-
-<%= link_to "Home", home_index_path %>  |  
-<%= link_to "Sections", sections_path %> 
