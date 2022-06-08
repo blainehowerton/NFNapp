@@ -1,16 +1,33 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>NFNapp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
   </head>
+<body>
 
-  <body>
-    <%= yield %>
-  </body>
+<div class="container">
+
+ <div class="row">
+  <div class="col-md-8"><h2>  </h2></div>
+  <div class="col-md-4">((dropdown here))</div>
+ </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+  <%= yield %>
+
+
+<hr>
+
+ <button type="button" class="btn btn-default"><%= link_to "Articles", articles_path %></button>
+ <button type="button" class="btn btn-default"><%= link_to "Contacts", contacts_path %></button>
+ <button type="button" class="btn btn-default"><%= link_to "Editions", editions_path %></button>
+ <button type="button" class="btn btn-default"><%= link_to "Contacts", contacts_path %></button>
+
+</div>
+</body>
 </html>
+

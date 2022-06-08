@@ -1,4 +1,4 @@
-<h1>Article Details</h1>
+<h2>Article Details</h2>
 
 <p>Section: <%= @article.section_id %>
 <p><%= @article.title %></p>
@@ -32,7 +32,3 @@
 
 <h2>Add a comment:</h2>
 <%= render 'comments/form' %>
-
-<hr>
-<%= link_to "Home", home_index_path %>  |  
-<%= link_to "Articles", articles_path %> 
