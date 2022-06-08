@@ -1,6 +1,6 @@
 class EditionsController < ApplicationController
   def index
-    @editions = Edition.all
+    @editions = Edition.all.order (:issue_date)
   end
 
   def show

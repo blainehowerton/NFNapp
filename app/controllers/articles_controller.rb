@@ -4,18 +4,18 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = Article.all
+    @articles = Article.all.order (:print_date)
   end
 
   def show
     @article = Article.find(params[:id])
-    @editions = Edition.all
+
   end
 
   def new
     @article = Article.new
-    @editions = Edition.all
-    @sections = Section.all
+    @editions = Edition.all.order(:issue_date)
+    @sections = Section.all.order(:title)
   end
 
   def create
