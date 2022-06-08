@@ -3,5 +3,20 @@
 <p><%= @section.title %><br>
     <%= @section.description %>
     </p>
-<%= button_to "Destroy", section_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %><br><br>
-<%= link_to "Edit", edit_section_path(@section) %>  |  
+Showing the most recent articles in this section:
+<ul>
+  <% @articles.each do |article| %>
+    <% unless article.archived? %>
+      <li>
+        <%= link_to article.title, article %>
+        <%= link_to "[Wordpress]", article.wordpress_url %>
+      </li>
+    <% end %>
+  <% end %>
+</ul>
+
+<br>
+<%= link_to "Edit Section Details", edit_section_path(@section) %>
+<br>
+<br>
+<%= button_to "Destroy", section_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>

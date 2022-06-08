@@ -1,10 +1,11 @@
 class SectionsController < ApplicationController
   def index
-    @sections = Section.all
+    @sections = Section.all.order ('title')
   end
 
   def show
     @section = Section.find(params[:id])
+    @articles = Article.where("section_id" => params[:id]).all.order('web_date DESC')
   end
 
   def new
