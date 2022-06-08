@@ -226,7 +226,7 @@ DEPENDENCIES
   rails (~> 7.0.3)
   selenium-webdriver
   sprockets-rails
-  sqlite3 (~> 1.4)
+  sqlite3
   stimulus-rails
   table_print
   turbo-rails
