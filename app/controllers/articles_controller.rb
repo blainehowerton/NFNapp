@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.all.order (:print_date)
+    @articles = Article.limit(15).order ('web_date DESC')
   end
 
   def show
