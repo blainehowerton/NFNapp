@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  
   def index
     @contacts = Contact.all
   end
@@ -17,7 +18,7 @@ class ContactsController < ApplicationController
     if @contact.save
       redirect_to @contact
     else
-      render :new, status: :unprocessable_entity
+      render :new, Status: :unprocessable_entity
     end
   end
 
@@ -44,8 +45,6 @@ class ContactsController < ApplicationController
 
   private
     def contact_params
-      params.require(:contact).permit(:first, :last, :phone, :address1, :address2, :zip, :email, :note, :tag, :company, :title, :fax, :mobile, :list, :type)
+      params.require(:contact).permit(:first, :last, :address_1, :address_2, :city, :state, :zip, :primary_phone, :secondary_phone, :email)
     end
 end
-
-

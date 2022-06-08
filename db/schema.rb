@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_27_060627) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_01_051210) do
   create_table "articles", force: :cascade do |t|
     t.string "title"
     t.text "body"
@@ -31,22 +31,17 @@ ActiveRecord::Schema[7.0].define(version: 2022_05_27_060627) do
 
   create_table "contacts", force: :cascade do |t|
     t.string "first"
-    t.string "last"
-    t.string "phone"
-    t.string "address1"
-    t.string "address2"
-    t.string "zip"
-    t.string "email"
-    t.text "note"
-    t.string "tag"
-    t.string "company"
-    t.string "title"
-    t.string "fax"
-    t.string "mobile"
-    t.string "list"
-    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "last"
+    t.string "address_1"
+    t.string "address_2"
+    t.string "city"
+    t.string "state"
+    t.string "zip"
+    t.string "primary_phone"
+    t.string "secondary_phone"
+    t.string "email"
   end
 
   add_foreign_key "comments", "articles"

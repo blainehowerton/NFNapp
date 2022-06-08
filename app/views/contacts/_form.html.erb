@@ -2,26 +2,63 @@
   <div>
     <%= form.label :first %><br>
     <%= form.text_field :first %>
-    <% article.errors.full_messages_for(:first).each do |message| %>
+
+    <p></p>
+
+    <%= form.label :last %><br>
+    <%= form.text_field :last %>
+
+    <p></p>
+
+    <%= form.label :address_1 %><br>
+    <%= form.text_field :address_1 %>
+
+        <p></p>
+
+    <%= form.label :address_2 %><br>
+    <%= form.text_field :address_2 %>
+
+        <p></p>
+
+    <%= form.label :city %><br>
+    <%= form.text_field :city %>
+
+        <p></p>
+
+    <%= form.label :state %><br>
+    <%= form.text_field :state %>
+
+        <p></p>
+
+    <%= form.label :zip %><br>
+    <%= form.text_field :zip %>
+
+        <p></p>
+
+    <%= form.label :primary_phone %><br>
+    <%= form.text_field :primary_phone %>
+
+        <p></p>
+
+    <%= form.label :secondary_phone %><br>
+    <%= form.text_field :secondary_phone %>
+
+        <p></p>
+
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>    
+
+    <% contact.errors.full_messages_for(:first).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :notes %><br>
-    <%= form.text_area :notes %><br>
-    <% article.errors.full_messages_for(:notes).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+<p></p>
 
   <div>
     <%= form.submit %>
   </div>
 
-<div>
-  <%= form.label :status %><br>
-  <%= form.select :status, ['public', 'private', 'archived'], selected: 'public' %>
-</div>
+<p></p>
 
 <% end %>

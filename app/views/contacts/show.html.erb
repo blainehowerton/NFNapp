@@ -1,6 +1,19 @@
-<h1>Headline: <%= @contact.title %></h1>
+<h1><%= @contact.first %> <%= @contact.last %></h1>
 
-<p>Contact: <%= @contact.body %></p>
+<p></p>
+
+Address:<br>
+<%= @contact.address_1 %><br>
+<%= @contact.address_2 %><br>
+<%= @contact.city %>, <%= @contact.state %>  <%= @contact.zip %><br>
+<br>
+Phones:<br>
+<%= @contact.primary_phone %><br>
+<%= @contact.secondary_phone %><br>
+<br>
+Email: <br>
+<%= @contact.email %>
+
 
 <ul>
   <li><%= link_to "Edit", edit_contact_path(@contact) %></li>
@@ -11,5 +24,6 @@
 </ul>
 
 
+
 <%= link_to "Home", home_index_path %>  |  
-<%= link_to "Articles", articles_path %> 
+<%= link_to "Contacts", contacts_path %>

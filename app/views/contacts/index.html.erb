@@ -3,9 +3,12 @@
 <ul>
   <% @contacts.each do |contact| %>
     <li>
-      <%= link_to contact.first, contact %>
-      </li>
-    <% end %>
+	<%= contact.first %> <%= contact.last %>
+     <%= link_to 'show', contact %>
+    </li>
+  <% end %>
 </ul>
 
-<%= link_to "Home", home_index_path %>  |  
+<h3><%= link_to "New Contact", new_contact_path %></h3>
+
+<p><%= link_to "Home", home_index_path %> | <%= link_to "Articles", articles_path %></p>
