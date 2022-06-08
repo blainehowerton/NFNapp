@@ -9,11 +9,13 @@
   Article status: <%= @article.status %><br>
   </p>
 
+<p>
 <%= link_to "Edit", edit_article_path(@article) %>  |  
 <%= link_to "Destroy", article_path(@article), data: {
                     turbo_method: :delete,
                     turbo_confirm: "Are you sure?"
                   } %>
+</p>
 
 <!-- this is an optional view for showing the full article
 <hr>
