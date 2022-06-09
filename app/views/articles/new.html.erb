@@ -1,3 +1,18 @@
 <h2>New Article</h2>
+    
+   
+
+    <% if @article.errors.any? %>
+      <br>
+      <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <span class="sr-only">Error:</span>
+      </div>
+ <!--
+      <% @article.errors.full_messages.each do |message| %>
+      <li><%= message %>
+      <% end %>
+ -->
+    <% end %>
 
 <%= render "form", article: @article %>

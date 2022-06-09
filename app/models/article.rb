@@ -5,5 +5,8 @@ class Article < ApplicationRecord
   has_one :section
 
   validates :title, presence: true
+  validates :web_date, presence: true
+  validates :wordpress_url, presence: true
+
   #validates :body, presence: true, length: { minimum: 10 }
 end

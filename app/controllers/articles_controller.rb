@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.limit(15).order ('web_date DESC')
+    @articles = Article.limit(40).order ('web_date DESC')
   end
 
   def show
@@ -22,8 +22,10 @@ class ArticlesController < ApplicationController
     if @article.save
       redirect_to @article
     else
-      render :new, status: :unprocessable_entity
+      flash[:Error!] = "Be sure to fill out all fields."
+      redirect_to new_article_path
     end
+  
   end
 
   def edit
