@@ -3,17 +3,31 @@
 <p><%= @section.title %><br>
     <%= @section.description %>
     </p>
+
+    <br>
+
+    <table class="table table-responsive">
+    <tr>
+    <th>Article Name
+    <th>Status
+    <th>Wordpress Link
+  </tr>
+
 Showing the most recent articles in this section:
-<ul>
+
+<br>
   <% @articles.each do |article| %>
     <% unless article.archived? %>
-      <li>
-        <%= link_to article.title, article %>
-        <%= link_to "[Wordpress]", article.wordpress_url %>
-      </li>
-    <% end %>
+      
+    <td><%= link_to article.title, article %>
+    <td><%= article.status %>
+    <td><%= link_to "Launch", article.wordpress_url %>
+
+  </tr>
+    <% end %>  
   <% end %>
-</ul>
+
+</table>
 
 <br>
 <%= link_to "Edit Section Details", edit_section_path(@section) %>
