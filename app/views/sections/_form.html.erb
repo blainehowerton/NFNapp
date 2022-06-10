@@ -1,24 +1,10 @@
 <%= form_with model: section do |form| %>
 
-  <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
-  </div>
-
-<br>
-
-  <div>
-    <%= form.label :description %><br>
-    <%= form.text_field :description %>
-  </div>
-
-  <br>
-
-<br>
-
-  <div>
-    <%= form.submit %>
-  </div>
+<%= bootstrap_form_for(@section) do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_area :description %>
+  <%= f.submit "Submit" %>
+<% end %>
 
 <br>
 

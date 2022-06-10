@@ -1,10 +1,13 @@
 class ArticlesController < ApplicationController
+  
   def index
     @articles = Article.limit(40).order ('web_date DESC')
   end
 
   def show
     @article = Article.find(params[:id])
+    @sections = Section.all
+    #@section_title = Section.find(1)
 
   end
 

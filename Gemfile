@@ -5,6 +5,8 @@ ruby "2.7.6"
 
 gem 'devise'
 
+gem 'bootstrap_form'
+
 # Displays output of tables in rails console - http://tableprintgem.com/
 gem "table_print"
 
