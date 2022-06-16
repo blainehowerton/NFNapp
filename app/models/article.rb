@@ -7,6 +7,7 @@ class Article < ApplicationRecord
   validates :title, presence: true
   validates :web_date, presence: true
   validates :wordpress_url, presence: true
+  validates :status, presence: true
+  
 
-  #validates :body, presence: true, length: { minimum: 10 }
 end

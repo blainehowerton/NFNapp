@@ -1,86 +1,58 @@
 <%= form_with model: article do |form| %>
 
 
-  <div>
-    Section:
-    <%= select_tag 'section_id', options_from_collection_for_select(@sections, "id", "title", selected: @article.section_id) %>
-  </div>
+        <div>
+          Section:
+          <%= select_tag 'section_id', options_from_collection_for_select(@sections, "id", "title", selected: @article.section_id) %>
+        </div>
 
-  <br>
-
-
-  <div>
-    Issue Date:
-    <%= select_tag 'print_date', options_from_collection_for_select(@editions, "issue_date", "issue_date", selected: @article.print_date) %>
-  </div>
-
-<br>
-
-  <div>
-    <%= form.label :title %>: 
-    <%= form.text_field :title %>
-    <% article.errors.full_messages_for(:title).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
-
-<br>
+        <br>
 
 
-  <div>
-    Wordpress URL:
-    <%= form.text_field :wordpress_url %>
-    <% article.errors.full_messages_for(:wordpress_url).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
+        <div>
+          Issue Date:
+          <%= select_tag 'print_date', options_from_collection_for_select(@editions, "issue_date", "issue_date", selected: @article.print_date) %>
+        </div>
 
+      <br>
 
-
-<!-- This is an optional view to add the body of an article
-  <div>
-    <%= form.label :body %><br>
-    <%= form.text_area :body %><br>
-    <% article.errors.full_messages_for(:body).each do |message| %>
-      <div><%= message %></div>
-    <% end %>
-  </div>
--->
-
-  <br>
-
-  <div>
-    <%= form.label :web_date %>: 
-    <%= form.date_field :web_date %><br>
-  </div>
-
- <!--error reporting
-
-          <% if @article.errors.any? %>
-            <div class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span>
-            
-          <% article.errors.full_messages_for(:web_date).each do |message| %>
-            <li><%= message %></li>
-                <% end %></div>
-
+        <div>
+          <%= form.label :title %>: 
+          <%= form.text_field :title %>
+          <% article.errors.full_messages_for(:title).each do |message| %>
+            <div><%= message %></div>
           <% end %>
-    </div>
-  -->
+        </div>
 
-  <br>
+      <br>
 
 
-<div>
-  <%= form.label :status %>
-  <%= form.select :status, ['private', 'public', 'archived' ], selected: @article.status %>
-</div>
+        <div>
+          Wordpress URL:
+          <%= form.text_field :wordpress_url %>
+          <% article.errors.full_messages_for(:wordpress_url).each do |message| %>
+            <div><%= message %></div>
+          <% end %>
+        </div>
 
-<br>
+        <br>
 
-  <div>
-    <%= form.submit %>
-  </div>
+        <div>
+          <%= form.label :web_date %>: 
+          <%= form.date_field :web_date %><br>
+        </div>
+
+        <br>
+
+        <div>
+          <%= form.label :status %>
+          <%= form.select :status, ['private', 'public', 'archived'], selected: @article.status %>
+        </div>
+
+        <br>
+
+        <div>
+          <%= form.submit %>
+        </div>
 
 <% end %>
