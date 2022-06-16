@@ -1,5 +1,46 @@
 <h2>Reports</h2>
 
+
+<table class="table table-responsive">
+    <tr>
+    <th>Article Name
+    <th>Web Publish Date
+    <th>Print Date
+    <th>Wordpress Link
+  </tr>
+
+Listing all articles marked private, sorted by web publish date:
+
+<br>
+<br>
+
+    <% @articles.each do |article| %>
+    <% unless article.archived? %>
+        <td><%= link_to article.title, article %>
+        <td><%= article.web_date.strftime("%m/%d/%Y") %>
+        <td><%= article.print_date.strftime("%m/%d/%Y") %>
+        <td><%= link_to "Launch", article.wordpress_url %>
+  </tr>
+    <% end %>
+  <% end %>
+
+</table>
+
+<h3><%= link_to "New Article", new_article_path %></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 A list of articles marked private:
 <ul>
   <% @articles.each do |article| %>
