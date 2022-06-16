@@ -12,13 +12,20 @@ before_action :authenticate_user!
 
 	def show
 	@user = User.find(params[:id])
-	@contact = Contact.where(userid: "9")
-	#Contact.find(params[:userid])
+	#@cfields = User.joins(:contact).where(params[:id] == params[:userid])
+	#this one displays all contacts, regardless of user id
+	@cfields = Contact.where(params[@user.id] = params[contact: :userid] )
+	#this one displays all contacts, regardless of user id
+	#@cfields = Contact.where(params[:id] == params[contact: :id] )
 	end
+
+	def sign_out
+	end
+
 
 	private
     def user_params
-      params.permit(:email, :userid)
+      params.permit(:userid, :id, :cf)
     end
 
 end
