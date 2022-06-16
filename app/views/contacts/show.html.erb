@@ -9,8 +9,9 @@
 <abbr title="Phone">P: </abbr><%= @contact.primary_phone %><br>
                               <%= @contact.secondary_phone %><br>
 </address>
-Email: <br>
-<%= @contact.email %>
+
+<p>Email: <%= @contact.email %></p>
+<p>Web User Id: <%= @contact.userid %></p>
 <br>
 <%= link_to "Edit", edit_contact_path(@contact) %> <br><br><br>
 <%= button_to "Destroy", contact_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>

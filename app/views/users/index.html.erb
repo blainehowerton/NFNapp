@@ -1,0 +1,22 @@
+<h2>Users</h2>
+
+
+<table class="table table-responsive">
+    <tr>
+    <th>User ID
+    <th>User Name
+  </tr>
+
+Listing all users:
+
+<br>
+<br>
+
+    <% @users.each do |user| %>
+        <td><%= link_to user.id, user %>
+        <td><%= user.email %>
+  </tr>
+    <% end %>
+
+</table>
+

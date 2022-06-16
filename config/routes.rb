@@ -7,11 +7,14 @@ Rails.application.routes.draw do
   get 'articles/index', to: 'articles#index'
   get 'editions/index', to: 'editions#index'
   get 'sections/index', to: 'sections#index'
+  get 'users/index', to: 'users#index'
+  get '/user/details', to: 'users#details'
 
   resources :reports
   resources :contacts
   resources :editions
   resources :sections
+  resources :users
   resources :articles do
     resources :comments
 

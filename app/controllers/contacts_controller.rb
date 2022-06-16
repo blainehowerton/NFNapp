@@ -1,4 +1,5 @@
 class ContactsController < ApplicationController
+  before_action :authenticate_user!
   
   def index
     @contacts = Contact.all
@@ -18,7 +19,8 @@ class ContactsController < ApplicationController
     if @contact.save
       redirect_to @contact
     else
-      render :new, Status: :unprocessable_entity
+      flash[:Error!] = "Be sure to fill out all fields."
+      redirect_to new_contact_path
     end
   end
 
@@ -45,6 +47,6 @@ class ContactsController < ApplicationController
 
   private
     def contact_params
-      params.permit(:first, :last, :address_1, :address_2, :city, :state, :zip, :primary_phone, :secondary_phone, :email)
+      params.require(:contact).permit(:first, :last, :address_1, :address_2, :city, :state, :zip, :primary_phone, :secondary_phone, :email, :userid)
     end
 end

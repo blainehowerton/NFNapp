@@ -51,6 +51,12 @@
     <% contact.errors.full_messages_for(:first).each do |message| %>
       <div><%= message %></div>
     <% end %>
+
+         <p></p>
+
+    <%= form.label :userid %><br>
+    <%= form.text_field :userid %> 
+       
   </div>
 
 <p></p>
