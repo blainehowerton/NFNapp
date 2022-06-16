@@ -26,28 +26,5 @@ Listing all articles marked private, sorted by web publish date:
 
 </table>
 
-<h3><%= link_to "New Article", new_article_path %></h3>
+<br><br>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-A list of articles marked private:
-<ul>
-  <% @articles.each do |article| %>
-    <% unless article.archived? %>
-      <li>
-        <%= link_to article.title, article %>
-      </li>
-    <% end %>
-  <% end %>
-</ul>
