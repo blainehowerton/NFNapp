@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   
   def index
-    @articles = Article.limit(40).order ('web_date DESC')
+    @articles = Article.limit(100).order ('web_date DESC')
   end
 
   def show

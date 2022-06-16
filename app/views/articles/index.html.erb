@@ -7,10 +7,10 @@
     <th>Web Publish Date
     <th>Print Date
     <th>Wordpress Link
-    <th>Article ID
+    <th>Article Status
   </tr>
 
-Listing the last 40 articles, sorted by web publish date:
+Listing the last 100 articles, sorted by web publish date:
 
 <br>
 <br>
@@ -21,7 +21,7 @@ Listing the last 40 articles, sorted by web publish date:
         <td><%= article.web_date.strftime("%m/%d/%Y") %>
         <td><%= article.print_date.strftime("%m/%d/%Y") %>
         <td><%= link_to "Launch", article.wordpress_url %>
-        <td><%= link_to article.id, article %>
+        <td><%= article.status %>
   </tr>
     <% end %>
   <% end %>
