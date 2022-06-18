@@ -1,0 +1,14 @@
+<h1><%= @organization.name %></h1>
+
+<br>
+
+<p>Website: <%= @organization.website %>
+
+
+<p>  
+<%= link_to "Edit Organization", edit_organization_path %> | <%= link_to "New Organization", new_organization_path %> <br>
+<%= button_to "Destroy", organization_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>
+</p>
+
+
+<p></p>

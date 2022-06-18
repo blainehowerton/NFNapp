@@ -9,7 +9,9 @@ Rails.application.routes.draw do
   get 'sections/index', to: 'sections#index'
   get 'users/index', to: 'users#index'
   get '/user/details', to: 'users#details'
+  get 'organizations/index', to: 'organizations#index'
 
+  resources :organizations
   resources :reports
   resources :contacts
   resources :editions

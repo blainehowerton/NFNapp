@@ -1,0 +1,11 @@
+<%= form_with model: organization do |form| %>
+  
+<%= bootstrap_form_for(@organization) do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_field :website %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<br>
+
+<% end %>
