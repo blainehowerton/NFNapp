@@ -7,6 +7,16 @@ class OrganizationsController < ApplicationController
     @organization = Organization.new
   end
 
+  def create
+    @organization = Organization.new(organization_params)
+    if @organization.save
+      redirect_to @organization
+    else
+      flash[:Error!] = "Be sure to fill out all fields."
+      redirect_to new_organization_path
+    end
+  end
+
   def show
     @organization = Organization.find(params[:id])
   end
@@ -29,22 +39,11 @@ class OrganizationsController < ApplicationController
     end
   end
 
-  def create
-    @organization = Organization.new(organization_params)
-    if @organization.save
-      redirect_to @organization
-    else
-      flash[:Error!] = "Be sure to fill out all fields."
-      redirect_to new_organization_path
-    end
-
   def destroy
     @organization = Organization.find(params[:id])
     @organization.destroy
 
     redirect_to organizations_path, status: :see_other
-  end
-  
   end
 
   private
