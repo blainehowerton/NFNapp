@@ -1,7 +1,8 @@
 <h2>User Details</h2>
 
 <p>Sign in Email: <%= @user.email %><br>
-User Id: <%= @user.id %></p>
+</p>
 
-<p>Contact information: <br> 
 
+<%= link_to "Edit", edit_user_path(@user) %> <br><br><br>
+<%= button_to "Destroy", user_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>

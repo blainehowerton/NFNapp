@@ -3,12 +3,31 @@ class ContactsController < ApplicationController
   
   def index
     @contacts = Contact.all
+    #@organizations = Organization.pluck(:name)
+    #@organization = Organization.find(contact_params[:organization_id])
+    #@contact = Contact.find(params[:organization_id])
+    #@organization = Organization.where('id: = @contact.organization_id').take
   end
 
   def show
     @contact = Contact.find(params[:id])
-  end
 
+    @organization = @contact.organization_id
+    if @organization == nil
+      @organization = "not assigned"
+    else
+      @organization = Organization.find(@contact.organization_id)
+    end
+
+    @userid = @contact.userid 
+    if @userid == nil
+      @contact.userid  = "0"
+    else
+      @user = User.find(@userid)
+    end
+
+  end
+    
   def new
     @contact = Contact.new
   end
@@ -19,7 +38,7 @@ class ContactsController < ApplicationController
     if @contact.save
       redirect_to @contact
     else
-      flash[:Error!] = "Be sure to fill out all fields."
+      flash[:Error!] = "Be sure to fill out first and last name fields."
       redirect_to new_contact_path
     end
   end
@@ -47,6 +66,8 @@ class ContactsController < ApplicationController
 
   private
     def contact_params
-      params.require(:contact).permit(:first, :last, :address_1, :address_2, :city, :state, :zip, :primary_phone, :secondary_phone, :email, :userid)
+      params.require(:contact).permit(:first, :last, :address_1, :address_2, :city, :state, 
+        :zip, :primary_phone, :secondary_phone, :email, :userid, :organization_id)
     end
+
 end

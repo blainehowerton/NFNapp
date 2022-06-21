@@ -1,13 +1,27 @@
 <h2>Contacts</h2>
 
-<ul>
-  <% @contacts.each do |contact| %>
-    <li>
-	<%= contact.first %> <%= contact.last %>
-     <%= link_to 'show', contact %>
-    </li>
-  <% end %>
-</ul>
 
-<h3><%= link_to "New Contact", new_contact_path %></h3>
+<table class="table table-responsive">
+  <tr>
+  <th>Name
+  <th>Organization
+  <th>User ID
+  </tr>
+
+  Listing all contacts:
+
+  <br>
+  <br>
+  <% @contacts.each do |contact| %>
+    <td><%= contact.first %> <%= contact.last %>
+    <td><%= contact.organization_id %>
+    <td><%= link_to :show, contact %>
+  </tr>
+    <% end %>
+
+  </table>
+
+  <h3><%= link_to "New Contact", new_contact_path %></h3>
+
+
 

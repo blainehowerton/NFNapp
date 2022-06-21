@@ -1,0 +1,10 @@
+<%= form_with model: user do |form| %>
+  
+<%= bootstrap_form_for(@user) do |f| %>
+  <%= f.text_field :email %>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<br>
+
+<% end %>

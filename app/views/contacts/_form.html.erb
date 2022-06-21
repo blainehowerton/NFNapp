@@ -1,70 +1,27 @@
 <%= form_with model: contact do |form| %>
-  <div>
-    <%= form.label :first %><br>
-    <%= form.text_field :first %>
 
-    <p></p>
 
-    <%= form.label :last %><br>
-    <%= form.text_field :last %>
+<%= bootstrap_form_for(@contact) do |f| %>
+  <%= f.text_field :first %>
+  <%= f.text_field :last %>
+  <%= f.text_field :address_1 %>
+  <%= f.text_field :address_2 %>
+  <%= f.text_field :city %>
+  <%= f.text_field :state %>
+  <%= f.text_field :zip %>
+  <%= f.text_field :primary_phone %>
+  <%= f.text_field :secondary_phone %>
+  <%= f.text_field :email %>
+  <%= f.text_field :organization_id %>
+  <%= f.text_field :userid %>
+  <%= f.submit "Submit" %>
+<% end %>
 
-    <p></p>
-
-    <%= form.label :address_1 %><br>
-    <%= form.text_field :address_1 %>
-
-        <p></p>
-
-    <%= form.label :address_2 %><br>
-    <%= form.text_field :address_2 %>
-
-        <p></p>
-
-    <%= form.label :city %><br>
-    <%= form.text_field :city %>
-
-        <p></p>
-
-    <%= form.label :state %><br>
-    <%= form.text_field :state %>
-
-        <p></p>
-
-    <%= form.label :zip %><br>
-    <%= form.text_field :zip %>
-
-        <p></p>
-
-    <%= form.label :primary_phone %><br>
-    <%= form.text_field :primary_phone %>
-
-        <p></p>
-
-    <%= form.label :secondary_phone %><br>
-    <%= form.text_field :secondary_phone %>
-
-        <p></p>
-
-    <%= form.label :email %><br>
-    <%= form.text_field :email %>    
-
-    <% contact.errors.full_messages_for(:first).each do |message| %>
-      <div><%= message %></div>
+    <% contact.errors.full_messages_for(:contact).each do |message| %>
     <% end %>
 
-         <p></p>
-
-    <%= form.label :userid %><br>
-    <%= form.text_field :userid %> 
-       
-  </div>
-
-<p></p>
-
-  <div>
-    <%= form.submit %>
-  </div>
-
-<p></p>
-
 <% end %>
+
+
+
+

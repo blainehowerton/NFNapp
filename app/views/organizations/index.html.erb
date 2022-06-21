@@ -5,9 +5,7 @@
     <tr>
     <th>Organization Name
     <th>Website
-    <th>Print Date
-    <th>Wordpress Link
-    <th>Article Status
+    <th>ID
   </tr>
 
 Listing the last 100 organizations, sorted by name:
@@ -18,9 +16,7 @@ Listing the last 100 organizations, sorted by name:
 <% @organizations.each do |organization| %>
         <td><%= link_to organization.name, organization %>
         <td><%= link_to organization.website, organization %>
-        <td>3
-        <td>4
-        <td>5
+        <td><%= organization.id %>
   </tr>
     <% end %>
 

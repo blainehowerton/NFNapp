@@ -1,6 +1,15 @@
 <h1><%= @contact.first %> <%= @contact.last %></h1>
 
-<p></p>
+
+<% if @organization == nil %>
+  <em><%= '(This contact does not have an organization assigned)' %></em>
+  <% else %>
+  <p><%= @organization.name %></p>
+<% end %>
+
+
+
+
 
 <address>
   <strong><%= @contact.address_1 %></strong><br>
@@ -10,8 +19,17 @@
                               <%= @contact.secondary_phone %><br>
 </address>
 
-<p>Email: <%= @contact.email %></p>
-<p>Web User Id: <%= @contact.userid %></p>
+
+<p>Contact Email: <%= @contact.email %></p>
+
+<% if @user == nil %>
+  <em><%= '(This contact is not registered as a user)' %></em>
+  <% else %>
+  <h3>Web User Information</h3>
+  Id: <%= @contact.userid %><br>
+  Login Email: <%= @user.email %><p>
+  <% end %>
+
 <br>
 <%= link_to "Edit", edit_contact_path(@contact) %> <br><br><br>
 <%= button_to "Destroy", contact_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>

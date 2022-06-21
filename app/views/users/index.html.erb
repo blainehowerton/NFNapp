@@ -13,10 +13,12 @@ Listing all users:
 <br>
 
     <% @users.each do |user| %>
-        <td><%= link_to user.id, user %>
+        <td><%= user.id %>
         <td><%= user.email %>
   </tr>
     <% end %>
 
 </table>
+
+<h3><%= link_to "New Contact", new_contact_path %></h3>
 

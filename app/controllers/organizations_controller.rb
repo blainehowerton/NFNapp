@@ -10,7 +10,7 @@ class OrganizationsController < ApplicationController
   def create
     @organization = Organization.new(organization_params)
     if @organization.save
-      redirect_to @organization
+      redirect_to organizations_path
     else
       flash[:Error!] = "Be sure to fill out all fields."
       redirect_to new_organization_path
@@ -33,7 +33,7 @@ class OrganizationsController < ApplicationController
     #@article.section_id = params[:section_id]
 
     if @organization.update(organization_params)
-      redirect_to @organization
+      redirect_to organizations_path
     else
       render :edit, status: :unprocessable_entity
     end
