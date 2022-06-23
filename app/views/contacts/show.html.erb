@@ -1,12 +1,12 @@
 <h1><%= @contact.first %> <%= @contact.last %></h1>
 
-
-<% if @organization == nil %>
-  <em><%= '(This contact does not have an organization assigned)' %></em>
+<% if @orgid == nil %>
+   <em><%= '(no organization selected)' %></em>
   <% else %>
-  <p><%= @organization.name %></p>
-<% end %>
+    <%= @organization.name %>
+    <% end %>
 
+<br><br>
 
 
 

@@ -1,6 +1,6 @@
 class Organization < ApplicationRecord
 
-has_many :contact, dependent: :destroy
+has_many :contacts
 
 validates :name, presence: true
 

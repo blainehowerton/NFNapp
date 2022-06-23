@@ -12,11 +12,11 @@ class ContactsController < ApplicationController
   def show
     @contact = Contact.find(params[:id])
 
-    @organization = @contact.organization_id
-    if @organization == nil
-      @organization = "not assigned"
+    @orgid = @contact.organization_id
+    if @orgid == nil
+      @orgid
     else
-      @organization = Organization.find(@contact.organization_id)
+      @organization = Organization.find(@orgid) 
     end
 
     @userid = @contact.userid 
@@ -30,10 +30,15 @@ class ContactsController < ApplicationController
     
   def new
     @contact = Contact.new
+    @organizations = Organization.all
+    @organization_id = params[:organization_id]
+    
   end
 
   def create
     @contact = Contact.new(contact_params)
+    @organizations = Organization.all
+    @contact.organization_id = params[:organization_id]
 
     if @contact.save
       redirect_to @contact
@@ -45,10 +50,13 @@ class ContactsController < ApplicationController
 
   def edit
     @contact = Contact.find(params[:id])
+    @organizations = Organization.all
+
   end
 
   def update
     @contact = Contact.find(params[:id])
+    @contact.organization_id = params[:organization_id]
 
     if @contact.update(contact_params)
       redirect_to @contact

@@ -4,7 +4,6 @@
 <table class="table table-responsive">
   <tr>
   <th>Name
-  <th>Organization
   <th>User ID
   </tr>
 
@@ -14,7 +13,6 @@
   <br>
   <% @contacts.each do |contact| %>
     <td><%= contact.first %> <%= contact.last %>
-    <td><%= contact.organization_id %>
     <td><%= link_to :show, contact %>
   </tr>
     <% end %>

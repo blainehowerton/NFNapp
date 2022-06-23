@@ -12,7 +12,12 @@
   <%= f.text_field :primary_phone %>
   <%= f.text_field :secondary_phone %>
   <%= f.text_field :email %>
-  <%= f.text_field :organization_id %>
+
+        <div>
+          Organization: 
+          <%= select_tag :organization_id, options_from_collection_for_select(@organizations, "id", "name", selected: @contact.organization_id) %>
+        </div>
+<br>
   <%= f.text_field :userid %>
   <%= f.submit "Submit" %>
 <% end %>
