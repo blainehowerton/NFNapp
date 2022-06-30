@@ -34,7 +34,7 @@ class ArticlesController < ApplicationController
   def edit
     @article = Article.find(params[:id])
     @editions = Edition.all
-    @sections = Section.all
+    @sections = Section.all.order(:title)
   end
 
   def update
