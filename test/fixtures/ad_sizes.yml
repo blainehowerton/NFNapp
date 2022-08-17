@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ad_width: 9.99
+  ad_height: 9.99
+  ad_name: MyText
+  ad_description: MyString
+
+two:
+  ad_width: 9.99
+  ad_height: 9.99
+  ad_name: MyText
+  ad_description: MyString

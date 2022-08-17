@@ -1,0 +1,2 @@
+class Adsize < ApplicationRecord
+end

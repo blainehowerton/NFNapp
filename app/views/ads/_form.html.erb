@@ -1,0 +1,14 @@
+<%= form_with model: AdSize do |form| %>
+
+
+<%= bootstrap_form_for(@adsize) do |f| %>
+  <%= f.text_field :ad_name %>
+  <%= f.submit "Submit" %>
+
+<% end %>
+
+  <% adsize.errors.full_messages_for(:adsize).each do |message| %>
+  <% end %>
+
+<% end %>
+
