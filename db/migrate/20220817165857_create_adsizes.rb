@@ -5,8 +5,6 @@ class CreateAdsizes < ActiveRecord::Migration[7.0]
     t.decimal :ad_height
     t.text :ad_name
     t.string :ad_description
-    t.datetime :created_at, null: false
-    t.datetime :updated_at, null: false
 
     t.timestamps
     end

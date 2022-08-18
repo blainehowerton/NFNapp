@@ -10,9 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_17_153910) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_17_165857) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "adsizes", force: :cascade do |t|
+    t.decimal "ad_width"
+    t.decimal "ad_height"
+    t.text "ad_name"
+    t.string "ad_description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "articles", force: :cascade do |t|
     t.string "title"
