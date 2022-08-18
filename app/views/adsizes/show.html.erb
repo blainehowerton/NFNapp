@@ -1,2 +1,8 @@
-<h1>Adsizes#show</h1>
-<p>Find me in app/views/adsizes/show.html.erb</p>
+<h1><%= @adsize.ad_name %></h1>
+
+<p>Width: <%= @adsize.ad_width %><br>
+Height: <%= @adsize.ad_height %><br>
+Description: <%= @adsize.ad_description %>
+</p>
+
+<%= link_to "Edit", edit_adsize_path(@adsize) %> <br><br><br>

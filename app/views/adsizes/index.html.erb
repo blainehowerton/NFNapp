@@ -1,2 +1,27 @@
-<h1>Adsizes#index</h1>
-<p>Find me in app/views/adsizes/index.html.erb</p>
+<h2>Ad Sizes</h2>
+
+
+<table class="table table-responsive">
+  <tr>
+  <th>Name
+  <th>Width
+  <th>Height
+  </tr>
+
+  Listing all ad sizes:
+
+  <br>
+  <br>
+  <% @adsizes.each do |adsize| %>
+    <td><%= link_to adsize.ad_name, adsize %>
+    <td><%= adsize.ad_width %>
+    <td><%= adsize.ad_height %>      
+  </tr>
+    <% end %>
+
+  </table>
+
+  <h3><%= link_to "New ad size", new_adsize_path %></h3>
+
+
+

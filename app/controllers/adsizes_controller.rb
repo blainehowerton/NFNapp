@@ -1,21 +1,22 @@
 class AdsizesController < ApplicationController
   def index
-    @adsizes = AdSizes.all
+    @adsizes = Adsize.all
   end
 
   def edit
+    @adsize = Adsize.find(params[:id])
   end
 
   def show
-    @adsize = AdSize.find(params[:id])
+    @adsize = Adsize.find(params[:id])
   end
 
   def new
-    @adsize = AdSize.new
+    @adsize = Adsize.new
   end
 
   def create
-    @adsize = AdSize.new(adsize_params)
+    @adsize = Adsize.new(adsize_params)
 
     if @adsize.save
       redirect_to @adsize
@@ -24,6 +25,17 @@ class AdsizesController < ApplicationController
       redirect_to new_adsize_path
     end
   end
+
+  def update
+    @adsize = Adsize.find(params[:id])
+
+    if @adsize.update(adsize_params)
+      redirect_to @adsize
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
 
   def delete
   end

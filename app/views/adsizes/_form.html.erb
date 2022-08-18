@@ -1,8 +1,11 @@
-<%= form_with model: adsizes do |form| %>
+<%= form_with model: adsize do |form| %>
 
 
 <%= bootstrap_form_for(@adsize) do |f| %>
   <%= f.text_field :ad_name %>
+  <%= f.text_field :ad_width %>
+  <%= f.text_field :ad_height %>
+  <%= f.text_field :ad_description%>
   <%= f.submit "Submit" %>
 <% end %>
 
