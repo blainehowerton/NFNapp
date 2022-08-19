@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  get 'adsizes/edit'
-  get 'adsizes/show'
-  get 'adsizes/new'
-  get 'adsizes/delete'
-  get 'adsizes/index'
-
   devise_for :users
 
   get '/', to: 'home#index'
@@ -27,10 +21,8 @@ Rails.application.routes.draw do
   resources :editions
   resources :sections
   resources :users
-  resources :ads
   resources :articles do
     resources :comments
-
 
 end
 

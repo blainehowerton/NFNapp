@@ -25,14 +25,12 @@ class ContactsController < ApplicationController
     else
       @user = User.find(@userid)
     end
-
   end
     
   def new
     @contact = Contact.new
     @organizations = Organization.all
     @organization_id = params[:organization_id]
-    
   end
 
   def create
