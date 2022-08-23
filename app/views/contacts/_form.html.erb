@@ -15,7 +15,7 @@
 
         <div>
           Organization: 
-          <%= select_tag :organization_id, options_from_collection_for_select(@organizations, "id", "name", selected: @contact.organization_id) %>
+          <%= select_tag :organization_id, options_from_collection_for_select(@organizations, "id", "name", selected: @ad.adsize) %>
         </div>
 <br>
   <%= f.text_field :userid %>

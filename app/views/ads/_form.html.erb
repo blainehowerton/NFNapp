@@ -3,8 +3,14 @@
 
 <%= bootstrap_form_for(@ad) do |f| %>
   <%= f.text_field :text %>
-  <%= f.submit "Submit" %>
 
+    <div>
+    Adsize: 
+          <%= select_tag :adsize_id, options_from_collection_for_select(@adsizes, "id", "ad_name" selected: @adsize.id) %> 
+    </div>
+<br>
+
+<%= f.submit "Submit" %>
 <% end %>
 
   <% ad.errors.full_messages_for(:ad).each do |message| %>

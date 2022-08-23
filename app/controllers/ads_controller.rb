@@ -2,10 +2,6 @@ class AdsController < ApplicationController
   def index
     @ads = Ad.all
   end
-
-  def edit
-    @ad = Ad.find(params[:id])
-  end
   
   def show
     @ad = Ad.find(params[:id])
@@ -13,6 +9,7 @@ class AdsController < ApplicationController
 
   def new
     @ad = Ad.new
+    @adsizes = Adsize.all
   end
 
   def create
@@ -24,6 +21,11 @@ class AdsController < ApplicationController
       flash[:Error!] = "Be sure to fill out first all fields."
       redirect_to new_ad_path
     end
+  end
+
+  def edit
+    @ad = Ad.find(params[:id])
+    @adsizes = Adsize.all
   end
 
   def update

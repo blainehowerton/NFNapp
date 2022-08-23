@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_19_140826) do
+ActiveRecord::Schema[7.0].define(version: 2022_08_23_211313) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,7 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_19_140826) do
     t.integer "edition"
     t.integer "section"
     t.text "notes"
-    t.integer "adsize"
+    t.integer "adsize_id"
     t.text "text"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
