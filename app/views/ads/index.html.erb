@@ -3,19 +3,21 @@
 
 <table class="table table-responsive">
   <tr>
-  <th>Text
-  <th>xxx
-  <th>xxx
+  <th>Organization
+  <th>Ad Size
+  <th>Edition
+  <th>Ad Details
   </tr>
 
-  Listing all ad sizes:
+  Listing all ads:
 
   <br>
   <br>
   <% @ads.each do |ad| %>
+    <td>Organization Name
+    <td><%= ad.adsize.ad_name %>
+    <td>Edition
     <td><%= link_to ad.text, ad %>
-    <td>xxx
-    <td>xxx    
   </tr>
     <% end %>
 

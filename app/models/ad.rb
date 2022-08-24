@@ -1,4 +1,5 @@
 class Ad < ApplicationRecord
-	has_one :adsize
-	
+
+belongs_to :adsize
+
 end

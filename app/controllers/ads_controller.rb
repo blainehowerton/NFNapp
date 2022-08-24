@@ -1,19 +1,31 @@
 class AdsController < ApplicationController
   def index
     @ads = Ad.all
+    @adsizes = Adsize.all
+    @adsizename = "ad size name will go here"
   end
   
   def show
+    @ads = Ad.all
+    @adsizes = Adsize.all
     @ad = Ad.find(params[:id])
   end
 
   def new
     @ad = Ad.new
     @adsizes = Adsize.all
+    @adsize_id = params[:adsize_id]
+    if @adsize_id == nil
+      @adsize_id = "0"
+    else
+      @adsize_id = Adsize.find(@adsize_id)
+    end
   end
 
   def create
     @ad = Ad.new(ad_params)
+    @adsizes = Adsize.all
+    @adsize_id = params[:adsize_id]
 
     if @ad.save
       redirect_to @ad
@@ -38,12 +50,13 @@ class AdsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
   end
 
   private
     def ad_params
-      params.require(:ad).permit(:text, :id)
+      params.require(:ad).permit(:organization, :date, :edition, :section, :notes, 
+        :adsize_id, :text)
     end
 
 end
