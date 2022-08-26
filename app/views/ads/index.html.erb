@@ -14,7 +14,7 @@
   <br>
   <br>
   <% @ads.each do |ad| %>
-    <td>Organization Name
+    <td><%= ad.organization.name %>
     <td><%= ad.adsize.ad_name %>
     <td>Edition
     <td><%= link_to ad.text, ad %>

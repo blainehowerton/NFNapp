@@ -5,6 +5,8 @@
   <%= f.text_field :text %>
   <%= f.select :adsize_id, options_from_collection_for_select(@adsizes, 'id', 
       'ad_name', selected: @ad.adsize_id) %> 
+  <%= f.select :organization_id, options_from_collection_for_select(@organizations, 'id', 
+      'name', selected: @ad.organization_id) %> 
   <%= f.submit "Submit" %>
 
 <% end %>

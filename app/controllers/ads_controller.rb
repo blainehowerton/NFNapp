@@ -2,6 +2,7 @@ class AdsController < ApplicationController
   def index
     @ads = Ad.all
     @adsizes = Adsize.all
+    @organizations = Organization.all
     @adsizename = "ad size name will go here"
   end
   
@@ -14,18 +15,29 @@ class AdsController < ApplicationController
   def new
     @ad = Ad.new
     @adsizes = Adsize.all
+    @organizations = Organization.all
     @adsize_id = params[:adsize_id]
     if @adsize_id == nil
       @adsize_id = "0"
     else
       @adsize_id = Adsize.find(@adsize_id)
     end
+
+    if @organization_id == nil
+      @organization_id = "0"
+    else
+      @organization_id = Organization.find(@adsize_id)
+    end
+
+
   end
 
   def create
     @ad = Ad.new(ad_params)
     @adsizes = Adsize.all
     @adsize_id = params[:adsize_id]
+    @organizations = Organization.all
+    @organization_id = params[:organization_id]
 
     if @ad.save
       redirect_to @ad
@@ -38,10 +50,13 @@ class AdsController < ApplicationController
   def edit
     @ad = Ad.find(params[:id])
     @adsizes = Adsize.all
+    @organizations = Organization.all
   end
 
   def update
     @ad = Ad.find(params[:id])
+    @adsizes = Adsize.all
+    @organizations = Organization.all
 
     if @ad.update(ad_params)
       redirect_to @ad
@@ -51,11 +66,15 @@ class AdsController < ApplicationController
   end
 
   def destroy
+    @ad = Ad.find(params[:id])
+    @ad.destroy
+
+    redirect_to ads_path, status: :see_other
   end
 
   private
     def ad_params
-      params.require(:ad).permit(:organization, :date, :edition, :section, :notes, 
+      params.require(:ad).permit(:organization_id, :date, :edition, :section, :notes, 
         :adsize_id, :text)
     end
 

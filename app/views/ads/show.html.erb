@@ -1,6 +1,6 @@
 <h1>Ad Details</h1>
 
-<p>Organization: <%= @ad.organization %></p>
+<p>Organization: <%= @ad.organization.name %></p>
 
 <p>Edition: <%= @ad.edition %></p>
 
@@ -12,3 +12,4 @@
 
 
 <%= link_to "Edit", edit_ad_path(@ad) %> <br><br><br>
+<%= button_to "Destroy", ad_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>
