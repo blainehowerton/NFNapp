@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_08_26_011745) do
+ActiveRecord::Schema[7.0].define(version: 2022_09_06_132345) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "ads", force: :cascade do |t|
     t.integer "organization_id"
     t.date "date"
-    t.integer "edition"
+    t.integer "edition_id"
     t.integer "section"
     t.text "notes"
     t.integer "adsize_id"

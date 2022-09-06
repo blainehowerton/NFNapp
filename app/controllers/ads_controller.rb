@@ -3,7 +3,7 @@ class AdsController < ApplicationController
     @ads = Ad.all
     @adsizes = Adsize.all
     @organizations = Organization.all
-    @adsizename = "ad size name will go here"
+    @editions = Edition.all
   end
   
   def show
@@ -38,6 +38,7 @@ class AdsController < ApplicationController
     @adsize_id = params[:adsize_id]
     @organizations = Organization.all
     @organization_id = params[:organization_id]
+    @editions = Edition.all
 
     if @ad.save
       redirect_to @ad
@@ -51,12 +52,14 @@ class AdsController < ApplicationController
     @ad = Ad.find(params[:id])
     @adsizes = Adsize.all
     @organizations = Organization.all
+    @editions = Edition.all
   end
 
   def update
     @ad = Ad.find(params[:id])
     @adsizes = Adsize.all
     @organizations = Organization.all
+    @editions = Edition.all
 
     if @ad.update(ad_params)
       redirect_to @ad
@@ -74,7 +77,7 @@ class AdsController < ApplicationController
 
   private
     def ad_params
-      params.require(:ad).permit(:organization_id, :date, :edition, :section, :notes, 
+      params.require(:ad).permit(:organization_id, :date, :edition_id, :section, :notes, 
         :adsize_id, :text)
     end
 

@@ -7,6 +7,8 @@
       'ad_name', selected: @ad.adsize_id) %> 
   <%= f.select :organization_id, options_from_collection_for_select(@organizations, 'id', 
       'name', selected: @ad.organization_id) %> 
+  <%= f.select :edition_id, options_from_collection_for_select(@editions, 'id', 
+      'issue_date', selected: @ad.edition_id) %>
   <%= f.submit "Submit" %>
 
 <% end %>

@@ -1,12 +1,11 @@
 <h1>Ad Details</h1>
 
+<p>Edition: <%= @ad.edition.issue_date %><br>
+   Section: <%= @ad.section %></p>
+
 <p>Organization: <%= @ad.organization.name %></p>
 
-<p>Edition: <%= @ad.edition %></p>
-
-<p>Section: <%= @ad.section %></p>
-
-<p>Ad Size: <%= @ad.adsize_id %></p>
+<p>Ad Size: <%= @ad.adsize.ad_name %></p>
 
 <p>Notes: <%= @ad.notes %></p>
 
