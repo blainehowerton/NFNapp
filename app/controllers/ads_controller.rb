@@ -17,6 +17,8 @@ class AdsController < ApplicationController
     @adsizes = Adsize.all
     @organizations = Organization.all
     @adsize_id = params[:adsize_id]
+    @editions = Edition.all
+    
     if @adsize_id == nil
       @adsize_id = "0"
     else
