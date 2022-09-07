@@ -3,6 +3,16 @@ class OrganizationsController < ApplicationController
     @organizations = Organization.limit(100).order ('name ASC')
   end
 
+  def edit
+    @organization = Organization.find(params[:id])
+    #@editions = Edition.all
+    #@sections = Section.all
+  end
+
+  def show
+    @organization = Organization.find(params[:id])
+  end
+
   def new
     @organization = Organization.new
   end
@@ -15,16 +25,6 @@ class OrganizationsController < ApplicationController
       flash[:Error!] = "Be sure to fill out all fields."
       redirect_to new_organization_path
     end
-  end
-
-  def show
-    @organization = Organization.find(params[:id])
-  end
-
-  def edit
-    @organization = Organization.find(params[:id])
-    #@editions = Edition.all
-    #@sections = Section.all
   end
 
   def update
