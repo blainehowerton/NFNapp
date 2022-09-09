@@ -1,9 +1,9 @@
 class AdsController < ApplicationController
   def index
-    @ads = Ad.all
+    @ads = Ad.order(date: :desc)
     @adsizes = Adsize.all
     @organizations = Organization.all
-    @editions = Edition.all
+    @editions = Edition.all.order(issue_date: :desc)
   end
   
   def show

@@ -2,7 +2,25 @@
 
 <br>
 
-<p>Website: <%= @organization.website %>
+<p>Website: <%= @organization.website %></p>
+
+<table class="table table-responsive">
+  <tr>
+  <th>ID
+  <th>Organization
+  </tr>
+
+  Listing ads for this organization:
+
+  <br>
+  <br>
+  <% @ads.each do |ad| %>
+    <td><%= link_to ad.id, ad %>
+    <td><%= link_to ad.organization.name, ad.organization %>
+  </tr>
+    <% end %>
+
+  </table>
 
 
 <p>  
