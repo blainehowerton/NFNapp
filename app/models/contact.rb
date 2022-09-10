@@ -6,6 +6,7 @@ belongs_to :organization
 
 validates :first, presence: true
 validates :last, presence: true
+validates :organization_id, presence: true
 
 end
 

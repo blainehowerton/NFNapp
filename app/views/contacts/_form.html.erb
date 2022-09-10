@@ -2,8 +2,8 @@
 
 
 <%= bootstrap_form_for(@contact) do |f| %>
-  <%= f.text_field :first %>
-  <%= f.text_field :last %>
+  <%= f.text_field :first, label: "*First Name" %>
+  <%= f.text_field :last, label: "*Last Name" %>
   <%= f.text_field :address_1 %>
   <%= f.text_field :address_2 %>
   <%= f.text_field :city %>
@@ -13,7 +13,7 @@
   <%= f.text_field :secondary_phone %>
   <%= f.text_field :email %>
   <%= f.select :organization_id, options_from_collection_for_select(@organizations, "id", "name", selected: @contact.organization_id), {}, { class: "form form-group form-control" } %>
-  <%= f.text_field :job_title %>
+  <%= f.text_field :job_title, label: "*Job Title" %>
   <%= f.text_field :notes %>  
   <%= f.text_field :userid %>
   <%= f.submit "Submit" %>

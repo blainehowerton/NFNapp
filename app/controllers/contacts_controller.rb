@@ -4,10 +4,6 @@ class ContactsController < ApplicationController
   def index
     @contacts = Contact.all
     @organizations = Organization.all
-    #@organizations = Organization.pluck(:name)
-    #@organization = Organization.find(contact_params[:organization_id])
-    #@contact = Contact.find(params[:organization_id])
-    #@organization = Organization.where('id: = @contact.organization_id').take
   end
 
   def show
@@ -37,12 +33,12 @@ class ContactsController < ApplicationController
   def create
     @contact = Contact.new(contact_params)
     @organizations = Organization.all
-    @contact.organization_id = params[:organization_id]
+    @organization_id = params[:organization_id]
 
     if @contact.save
       redirect_to @contact
     else
-      flash[:Error!] = "Be sure to fill out first and last name fields."
+      flash[:Error!] = "Error! Not saved."
       redirect_to new_contact_path
     end
   end
