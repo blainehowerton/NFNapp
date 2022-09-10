@@ -16,6 +16,7 @@
       </h5>
     </div>
 
+<!-- First Dropdown -->
     <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
       <div class="card-body">
 
@@ -25,38 +26,52 @@
         <th>Edition
         <th>Ad Size
         </tr>
-
-        Listing ads for this organization:
-
-        <br>
-        <br>
         <% @ads.each do |ad| %>
           <td><%= link_to ad.id, ad %>
           <td><%= link_to ad.edition.issue_date, ad.edition %>
           <td><%= link_to ad.adsize.ad_name, ad.adsize %>
         </tr>
           <% end %>
-
         </table>
-
-
+        </div>
       </div>
     </div>
-  </div>
+<!-- First Dropdown -->
+
+
+<!-- Second Dropdown -->
   <div class="card">
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          Collapsible Group Item #2
+          Contacts
         </button>
       </h5>
     </div>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
       <div class="card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+
+        <table class="table table-responsive">
+        <tr>
+        <th>ID
+        <th>Name
+        <th>Job Title
+        </tr>
+        <% @contacts.each do |contact| %>
+          <td><%= link_to contact.id, contact %>
+          <td><%= contact.first %> <%= contact.last %>
+          <td><%= contact.job_title %>
+
+        </tr>
+          <% end %>
+        </table>
+
       </div>
     </div>
   </div>
+<!-- Second Dropdown -->
+
+<!-- Third Dropdown -->
   <div class="card">
     <div class="card-header" id="headingThree">
       <h5 class="mb-0">
@@ -72,6 +87,7 @@
     </div>
   </div>
 </div>
+<!-- Third Dropdown -->
 
 <br>
 <p>  

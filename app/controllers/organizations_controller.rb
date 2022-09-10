@@ -12,6 +12,7 @@ class OrganizationsController < ApplicationController
   def show
     @organization = Organization.find(params[:id])
     @ads = Ad.order(:date).where('organization_id' => params[:id])
+    @contacts = Contact.where('organization_id' => params[:id])
   end
 
   def new
