@@ -3,8 +3,10 @@
 
 <table class="table table-responsive">
   <tr>
+  <th>ID
   <th>Name
-  <th>User ID
+  <th>Organization
+  <th>Job Title
   </tr>
 
   Listing all contacts:
@@ -12,8 +14,10 @@
   <br>
   <br>
   <% @contacts.each do |contact| %>
+    <td><%= link_to contact.id, contact %>
     <td><%= contact.first %> <%= contact.last %>
-    <td><%= link_to :show, contact %>
+    <td><%= contact.organization.name %>
+    <td><%= contact.job_title %>
   </tr>
     <% end %>
 

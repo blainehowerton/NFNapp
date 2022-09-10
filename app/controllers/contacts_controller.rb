@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
   
   def index
     @contacts = Contact.all
+    @organizations = Organization.all
     #@organizations = Organization.pluck(:name)
     #@organization = Organization.find(contact_params[:organization_id])
     #@contact = Contact.find(params[:organization_id])
