@@ -14,10 +14,10 @@ class AdsController < ApplicationController
 
   def new
     @ad = Ad.new
-    @adsizes = Adsize.all
-    @organizations = Organization.all
+    @adsizes = Adsize.all.order(ad_name: :asc)
+    @organizations = Organization.order(name: :asc)
     @adsize_id = params[:adsize_id]
-    @editions = Edition.all
+    @editions = Edition.all.order(issue_date: :asc)
     
     if @adsize_id == nil
       @adsize_id = "0"
