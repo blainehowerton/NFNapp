@@ -4,6 +4,26 @@
     Digital Edition: <a href="<%= @edition.url %>" target="_blank"><%= @edition.url %></a><br>
     </p>
 
+<table class="table table-responsive">
+  <tr>
+  <th>ID
+  <th>Organization
+  <th>Ad Size
+  </tr>
+
+  Listing ads for this edition:
+
+  <br>
+  <br>
+  <% @ads.each do |ad| %>
+    <td><%= link_to ad.id, ad %>
+    <td><%= link_to ad.organization.name, ad.organization %>
+    <td><%= link_to ad.adsize.ad_name, ad.adsize %>
+  </tr>
+    <% end %>
+
+  </table>
+
 <%= link_to "Edit", edit_edition_path(@edition) %> <br><br>
 <%= button_to "Destroy", edition_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>
 

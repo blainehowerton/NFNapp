@@ -9,6 +9,7 @@ class AdsizesController < ApplicationController
 
   def show
     @adsize = Adsize.find(params[:id])
+    @ads = Ad.order(:date).where('adsize_id' => params[:id])
   end
 
   def new

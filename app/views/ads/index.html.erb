@@ -1,5 +1,26 @@
 <h2>Ads</h2>
 
+<table class="table table-responsive">
+  <tr>
+  <th>ID
+  <th>Organization
+  <th>Edition
+  <th>Size
+  </tr>
+
+  Listing all ads:
+
+  <br>
+  <br>
+  <% @ads.each do |ad| %>
+    <td><%= link_to ad.id, ad %>
+    <td><%= link_to ad.organization.name, ad.organization %>
+    <td><%= link_to ad.edition.issue_date, ad.edition %>
+    <td><%= link_to ad.adsize.ad_name, ad.adsize %>  
+  </tr>
+    <% end %>
+
+  </table>
 
 
   <h3><%= link_to "New ad", new_ad_path %></h3>

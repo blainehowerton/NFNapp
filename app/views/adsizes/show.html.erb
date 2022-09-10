@@ -5,4 +5,24 @@ Height: <%= @adsize.ad_height %><br>
 Description: <%= @adsize.ad_description %>
 </p>
 
+<table class="table table-responsive">
+  <tr>
+  <th>ID
+  <th>Organization
+  <th>Edition
+  </tr>
+
+  Listing all ads for this ad size:
+
+  <br>
+  <br>
+  <% @ads.each do |ad| %>
+    <td><%= link_to ad.id, ad %>
+    <td><%= link_to ad.organization.name, ad.organization %>
+    <td><%= link_to ad.edition.issue_date, ad.edition %>
+  </tr>
+    <% end %>
+
+  </table>
+
 <%= link_to "Edit", edit_adsize_path(@adsize) %> <br><br><br>
