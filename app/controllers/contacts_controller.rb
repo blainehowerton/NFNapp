@@ -48,7 +48,7 @@ class ContactsController < ApplicationController
 
   def edit
     @contact = Contact.find(params[:id])
-    @organizations = Organization.all
+    @organizations = Organization.order(name: :asc)
 
   end
 
@@ -73,7 +73,7 @@ class ContactsController < ApplicationController
   private
     def contact_params
       params.require(:contact).permit(:first, :last, :address_1, :address_2, :city, :state, 
-        :zip, :primary_phone, :secondary_phone, :email, :userid, :organization_id)
+        :zip, :primary_phone, :secondary_phone, :email, :userid, :organization_id, :notes, :job_title)
     end
 
 end

@@ -3,24 +3,19 @@
 <% if @orgid == nil %>
    <em><%= '(no organization selected)' %></em>
   <% else %>
-    <%= @organization.name %>
+    <i><%= @organization.name %>, <%= @contact.job_title %></i>
     <% end %>
-
-<br><br>
-
-
-
+<p>Email: <%= @contact.email %></p>
 
 <address>
-  <strong><%= @contact.address_1 %></strong><br>
+          <%= @contact.address_1 %><br>
           <%= @contact.address_2 %><br>
-          <%= @contact.city %>, <%= @contact.state %>  <%= @contact.zip %><br>
-<abbr title="Phone">P: </abbr><%= @contact.primary_phone %><br>
-                              <%= @contact.secondary_phone %><br>
+          <%= @contact.city %>, <%= @contact.state %>  <%= @contact.zip %><br><br>
+<abbr title="Phone">Primary Phone: </abbr><%= @contact.primary_phone %><br>
+          Secondary Phone: <%= @contact.secondary_phone %><br>
+          Notes: <%= @contact.notes %>
 </address>
 
-
-<p>Contact Email: <%= @contact.email %></p>
 
 <% if @user == nil %>
   <em><%= '(This contact is not registered as a user)' %></em>
@@ -30,6 +25,8 @@
   Login Email: <%= @user.email %><p>
   <% end %>
 
-<br>
-<%= link_to "Edit", edit_contact_path(@contact) %> <br><br><br>
-<%= button_to "Destroy", contact_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>
+<br><br>
+<%= link_to "Edit Contact", edit_contact_path(@contact) %> | 
+<%= link_to "New Contact", new_contact_path(@contact) %> <br><br>
+<%= button_to "Destroy Contact", contact_path, method: :delete, form: { turbo_confirm: "Are you sure?" } %>
+<br><br><br>

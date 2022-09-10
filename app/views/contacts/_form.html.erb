@@ -12,8 +12,9 @@
   <%= f.text_field :primary_phone %>
   <%= f.text_field :secondary_phone %>
   <%= f.text_field :email %>
-  <%= f.select :organization_id, options_from_collection_for_select(@organizations, "id", 
-    "name", selected: @contact.organization_id) %>
+  <%= f.select :organization_id, options_from_collection_for_select(@organizations, "id", "name", selected: @contact.organization_id), {}, { class: "form form-group form-control" } %>
+  <%= f.text_field :job_title %>
+  <%= f.text_field :notes %>  
   <%= f.text_field :userid %>
   <%= f.submit "Submit" %>
 <% end %>
