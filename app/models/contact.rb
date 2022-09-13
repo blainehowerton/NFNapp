@@ -3,7 +3,7 @@ class Contact < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
 
 belongs_to :organization
-has_one :user
+belongs_to :user
 
 validates :first, presence: true
 validates :last, presence: true

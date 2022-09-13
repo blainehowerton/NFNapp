@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+    before_action :authenticate_user!
   
   def index
     @articles = Article.limit(100).order ('web_date DESC')

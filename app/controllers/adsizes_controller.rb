@@ -1,4 +1,6 @@
 class AdsizesController < ApplicationController
+    before_action :authenticate_user!
+    
   def index
     @adsizes = Adsize.all
   end

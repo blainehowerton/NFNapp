@@ -1,4 +1,6 @@
 class EditionsController < ApplicationController
+    before_action :authenticate_user!
+    
   def index
     @editions = Edition.all.order (:issue_date)
   end
