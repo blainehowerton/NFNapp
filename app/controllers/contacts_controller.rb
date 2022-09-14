@@ -26,7 +26,7 @@ class ContactsController < ApplicationController
     
   def new
     @contact = Contact.new
-    @organizations = Organization.all
+    @organizations = Organization.all.order ('name ASC')
     @organization_id = params[:organization_id]
   end
 
