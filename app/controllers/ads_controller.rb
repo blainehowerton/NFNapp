@@ -2,7 +2,7 @@ class AdsController < ApplicationController
     before_action :authenticate_user!
     
   def index
-    @ads = Ad.order(date: :desc)
+    @ads = Ad.limit(60).order ('id DESC')
     @adsizes = Adsize.all
     @organizations = Organization.all
     @editions = Edition.all.order(issue_date: :desc)
