@@ -1,10 +1,11 @@
 <h1><%= @organization.name %></h1>
-
+Website: <%= @organization.website %>
+<br>
 <br>
 
-<p>Website: <%= @organization.website %></p>
-
-<br>
+<%= link_to "Edit Organization", edit_organization_path %> | <%= link_to "New Organization", new_organization_path %> | 
+<%= link_to "All Organizations", "/organizations" %>
+<hr>
 
 <div id="accordion">
   <div class="card">
@@ -91,7 +92,6 @@
 
 <br>
 <p>  
-<%= link_to "Edit Organization", edit_organization_path %> | <%= link_to "New Organization", new_organization_path %> <br>
 </p>
 
 

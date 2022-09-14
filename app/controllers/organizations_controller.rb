@@ -2,7 +2,7 @@ class OrganizationsController < ApplicationController
     before_action :authenticate_user!
     
   def index
-    @organizations = Organization.limit(100).order ('name ASC')
+    @organizations = Organization.all.order ('name ASC')
   end
 
   def edit

@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   before_action :authenticate_user!
   
   def index
-    @contacts = Contact.all
+    @contacts = Contact.all.order ('last ASC')
     @organizations = Organization.all
   end
 

@@ -1,22 +1,25 @@
 <h2>Organizations</h2>
+<%= link_to "New Organization", new_organization_path %> | <%= link_to "Contacts", contacts_path %> | <%= link_to "Editions", editions_path %>
+
+<br>
+<hr>
 
 
 <table class="table table-responsive">
     <tr>
-    <th>Organization Name
-    <th>Website
     <th>ID
+    <th>Organization Name
+
   </tr>
 
-Listing the last 100 organizations, sorted by name:
+Listing all organizations (sorted by name):
 
 <br>
 <br>
 
 <% @organizations.each do |organization| %>
-        <td><%= link_to organization.name, organization %>
-        <td><%= link_to organization.website, organization %>
-        <td><%= organization.id %>
+       <td><%= organization.id %>
+       <td><%= link_to organization.name, organization %>
   </tr>
     <% end %>
 

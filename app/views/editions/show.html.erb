@@ -1,4 +1,8 @@
 <h2>Edition Details</h2>
+<%= link_to "Edit Edition", edit_edition_path(@edition) %> | <%= link_to "New Edition", new_edition_path(@edition) %> | <%= link_to "All Editions", "/editions" %>
+<br>
+<hr>
+
 <p><%= @edition.title %><br>
     Issue Date: <%= @edition.issue_date %><br>
     Digital Edition: <a href="<%= @edition.url %>" target="_blank"><%= @edition.url %></a><br>
@@ -24,6 +28,5 @@
 
   </table>
 
-<%= link_to "Edit", edit_edition_path(@edition) %> <br><br>
 <%= button_to "Destroy", edition_path, method: :delete, form: { data: { turbo_confirm: "Are you sure?" } } %>
 

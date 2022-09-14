@@ -1,4 +1,8 @@
 <h1><%= @adsize.ad_name %></h1>
+<%= link_to "Edit AdSize", edit_adsize_path(@adsize) %> | <%= link_to "New AdSize", new_adsize_path(@adsize) %> | <%= link_to "All Adsizes", "/adsizes" %> 
+
+<br>
+<hr>
 
 <p>Width: <%= @adsize.ad_width %><br>
 Height: <%= @adsize.ad_height %><br>
@@ -24,5 +28,3 @@ Description: <%= @adsize.ad_description %>
     <% end %>
 
   </table>
-
-<%= link_to "Edit", edit_adsize_path(@adsize) %> <br><br><br>
