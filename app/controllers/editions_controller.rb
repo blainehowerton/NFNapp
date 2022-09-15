@@ -8,6 +8,7 @@ class EditionsController < ApplicationController
   def show
     @edition = Edition.find(params[:id])
     @ads = Ad.order(:date).where('edition_id' => params[:id])
+    @articles = Article.where('print_date' => @edition.issue_date)
   end
 
   def new
