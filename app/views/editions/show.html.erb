@@ -13,7 +13,7 @@
     <div class="card-header" id="headingOne">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-          Edition Ads
+          Edition Ads (sorted by organization id)
         </button>
       </h5>
     </div>
@@ -29,10 +29,6 @@
           <th>Ad Size
           </tr>
 
-          Listing ads for this edition:
-
-          <br>
-          <br>
           <% @ads.each do |ad| %>
             <td><%= link_to ad.id, ad %>
             <td><%= link_to ad.organization.name, ad.organization %>
@@ -51,7 +47,7 @@
     <div class="card-header" id="headingTwo">
       <h5 class="mb-0">
         <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-          Articles
+          Articles (sorted by web publish date)
         </button>
       </h5>
     </div>
@@ -61,14 +57,14 @@
         <table class="table table-responsive">
           <tr>
           <th>Title
-          <th>xxx
-          <th>xxx
+          <th>Section
+          <th>Web Publish Date
           </tr>
 
           <% @articles.each do |article| %>
-            <td><%= article.title %>
-            <td><%= article.wordpress_url %>
-            <td><%= article.print_date %>
+            <td><%= link_to article.title, article %>
+            <td><%= link_to article.section.title, article.section %>
+            <td><%= article.web_date %>
           </tr>
             <% end %>
 

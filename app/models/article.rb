@@ -2,9 +2,8 @@ class Article < ApplicationRecord
     
   include Visible
   
+  belongs_to :section
   has_many :comments, dependent: :destroy
-  has_one :edition
-  has_one :section
 
   validates :title, presence: true
   validates :web_date, presence: true
