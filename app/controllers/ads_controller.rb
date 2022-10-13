@@ -56,7 +56,7 @@ class AdsController < ApplicationController
     @ad = Ad.find(params[:id])
     @adsizes = Adsize.all
     @organizations = Organization.all
-    @editions = Edition.all
+    @editions = Edition.order(issue_date: :asc)
   end
 
   def update
